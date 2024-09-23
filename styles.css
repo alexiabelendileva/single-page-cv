@@ -1,0 +1,68 @@
+body {
+  padding: 50px;
+  border: 2px solid black;
+  font-family: "Nunito", sans-serif;
+}
+.top-line {
+  width: 75%;
+  height: 2px;
+  background-color: black;
+  left: 10;
+  margin: 0;
+}
+
+li {
+  list-style-type: disc;
+}
+
+h3 {
+  color: green;
+}
+
+p,
+li {
+  font-weight: 600;
+}
+h4{
+    color: #1c74c4;
+}
+.exp{
+    margin: 5px;
+}
+/* ANCHOR STYLING */
+
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block; /* Needed to apply transform on inline elements */
+  font-size:15px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+a:hover {
+  transform: scale(1.1);
+  transition: ease .5s;
+
+}
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%; /*this is the whole width*/
+    height: 2px;
+    background-color: green;
+    transform: scaleX(0); /*shows no underline */
+    transform-origin: left; /*the line beggins from left to right */
+    transition: transform 0.4s ease; /*smooth animation */
+}
+
+/* underline grows from left to right */
+a:hover::after {
+    transform: scaleX(1); /*full underline */
+}
+
+/* line goes to the right while not hovering */
+a:not(:hover)::after {
+    transform-origin: right; /*shrink to the right */
+}
